@@ -4,12 +4,14 @@ import ApiContext from "../ApiContext";
 import Table from "react-bootstrap/Table";
 import { Button } from "react-bootstrap";
 import ContactDialog from "./ContactDialog";
+import ContactDetail from "./ContactDetail";
 
 export default function ContactPanel(): JSX.Element {
   const api = useContext(ApiContext);
 
   const [contacts, setContacts] = useState<Contact[]>([]);
   const [addNew, setAddNew] = useState(false);
+  const [showDetail, setShowDetail] = useState<Contact | undefined>(undefined);
   const [editContact, setEditContact] = useState<Contact | undefined>(
     undefined
   );
@@ -86,6 +88,14 @@ export default function ContactPanel(): JSX.Element {
           onSave={onSave}
         />
       )}
+      {showDetail && (
+        <ContactDetail
+          contact={showDetail}
+          onCancel={() => {
+            setShowDetail(undefined);
+          }}
+        />
+      )}
       {editContact && (
         <ContactDialog
           contact={editContact}
@@ -127,6 +137,15 @@ export default function ContactPanel(): JSX.Element {
                   <td>{contact.title}</td>
                   <td>{contact.company}</td>
                   <td>
+                    <Button
+                      variant="secondary"
+                      style={{ marginRight: "20px" }}
+                      onClick={() => {
+                        setShowDetail(contact);
+                      }}
+                    >
+                      Show Contact
+                    </Button>
                     <Button
                       variant="primary"
                       style={{ marginRight: "20px" }}
