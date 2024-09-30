@@ -1,4 +1,4 @@
-package at.kallinger.contacts.dto;
+package com.example.contacts.dto;
 
 import jakarta.validation.constraints.NotNull;
 import jakarta.validation.constraints.Pattern;
