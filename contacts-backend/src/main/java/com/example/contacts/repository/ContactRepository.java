@@ -1,6 +1,6 @@
-package at.kallinger.contacts.repository;
+package com.example.contacts.repository;
 
-import at.kallinger.contacts.dto.Contact;
+import com.example.contacts.dto.Contact;
 import org.springframework.data.mongodb.repository.MongoRepository;
 
 public interface ContactRepository extends MongoRepository<Contact, String> {}

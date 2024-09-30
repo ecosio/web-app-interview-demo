@@ -1,9 +1,10 @@
-package at.kallinger.contacts.api;
+package com.example.contacts.api;
 
-import at.kallinger.contacts.dto.Contact;
-import at.kallinger.contacts.service.ContactService;
 import jakarta.validation.Valid;
 import jakarta.validation.constraints.NotNull;
+
+import com.example.contacts.dto.Contact;
+import com.example.contacts.service.ContactService;
 
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.access.prepost.PreAuthorize;
