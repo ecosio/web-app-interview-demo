@@ -1,0 +1,72 @@
+# Generated Files #
+bin/
+target/
+out/
+*.class
+*.log
+
+
+# Package Files #
+*.jar
+*.war
+*.ear
+
+
+# IDE Files #
+/.idea/
+.vscode
+.classpath
+.project
+.settings/
+*.swp
+*.iml
+atlassian-ide-plugin.xml
+rebel.xml
+
+# Unencrypted passwords #
+*-dev.properties
+*-stage.properties
+*-prod.properties
+*-vagrant.properties
+*-docker.properties
+
+*-dev.yml
+*-stage.yml
+*-prod.yml
+*-vagrant.yml
+*-docker.yml
+
+apps/x400/temp/**
+
+.flattened-pom.xml
+.yarn-cache
+.sts4-cache
+.idea
+.vscode
+node_modules
+
+scripts/supply/random_data.bin
+apps/accounts-parent/accounts-backend/data/
+.factorypath
+__pycache__
+.attach_pid*
+
+# Unencrypted passwords #
+*-dev.properties
+*-stage.properties
+*-prod.properties
+*-test.properties
+*-vagrant.properties
+*-docker.properties
+*-docker.yml
+*-prod.yml
+
+# keystores
+*.p12
+.history/
+
+# ignore the generated open-api client and spec
+#monitor-api/open-api
+
+.DS_Store
+*.dylib
