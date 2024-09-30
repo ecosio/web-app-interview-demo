@@ -7,7 +7,7 @@ import java.time.Month;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
-
+import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Service;
 
 @Service
@@ -23,6 +23,11 @@ public class ContactService {
     return repository.findById(id);
   }
 
+  public List<Contact> getContacts() {
+    return repository.findAll(
+      Sort.by(Sort.Direction.ASC, "FirstName").and(Sort.by(Sort.Direction.ASC, "LastName"))
+    );
+  }
 
   public void resetData() {
     repository.deleteAllById(List.of("contact-1", "contact-2", "contact-3", "contact-john"));
