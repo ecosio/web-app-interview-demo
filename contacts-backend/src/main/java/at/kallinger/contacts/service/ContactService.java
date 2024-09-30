@@ -33,9 +33,7 @@ public class ContactService {
 
   public Contact createNew(Contact contact) {
     // assign id
-    if (StringUtils.isEmpty(contact.getId())) {
-      contact.setId(UUID.randomUUID().toString());
-    }
+    if (StringUtils.isEmpty(contact.getId())) contact.setId(UUID.randomUUID().toString());
 
     return repository.insert(contact);
   }
