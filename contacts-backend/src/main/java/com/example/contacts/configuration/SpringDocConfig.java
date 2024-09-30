@@ -1,4 +1,4 @@
-package at.kallinger.contacts.configuration;
+package com.example.contacts.configuration;
 
 import io.swagger.v3.oas.models.Components;
 import io.swagger.v3.oas.models.OpenAPI;

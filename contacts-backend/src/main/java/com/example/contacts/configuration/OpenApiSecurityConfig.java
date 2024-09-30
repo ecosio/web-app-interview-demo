@@ -1,4 +1,4 @@
-package at.kallinger.contacts.configuration;
+package com.example.contacts.configuration;
 
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;

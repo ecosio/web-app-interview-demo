@@ -1,6 +1,6 @@
-package at.kallinger.contacts.api;
+package com.example.contacts.api;
 
-import at.kallinger.contacts.service.ContactService;
+import com.example.contacts.service.ContactService;
 
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.RequestMapping;

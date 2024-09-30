@@ -1,7 +1,7 @@
-package at.kallinger.contacts.service;
+package com.example.contacts.service;
 
-import at.kallinger.contacts.dto.Contact;
-import at.kallinger.contacts.repository.ContactRepository;
+import com.example.contacts.dto.Contact;
+import com.example.contacts.repository.ContactRepository;
 import java.time.LocalDate;
 import java.time.Month;
 import java.util.ArrayList;
