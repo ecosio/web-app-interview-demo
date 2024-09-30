@@ -60,7 +60,7 @@ describe("Contacts panel", () => {
       assertContact(contact);
       cy.get(`[data-testid=ContactFormSaveButton]`).click();
 
-      cy.get(`[data-testid=ContactsTableRow][data-testid-value=${id}]`).should(
+      cy.get("table > tbody > tr:nth-child(1)").should(
         "contain.text",
         "JohnDoe Doejohn.doe@gmail.com1970-01-01Facility ManagerFacilitator"
       );
