@@ -1,4 +1,4 @@
-package at.kallinger.contacts.configuration;
+package com.example.contacts.configuration;
 
 import static org.springframework.security.config.Customizer.withDefaults;
 
