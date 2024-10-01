@@ -37,4 +37,34 @@ public class Contact {
   @NotNull
   @Size(min = 1)
   String company;
+
+
+
+  public String getInitials() {
+    if (firstName != null || lastName != null) {
+      if (firstName == null) {
+        if (lastName.length() > 0) {
+          return String.valueOf(lastName.charAt(0));
+        } else {
+          return lastName;
+        }
+      } else if (lastName == null) {
+        if (firstName.length() > 0) {
+          return String.valueOf(firstName.charAt(0));
+        } else {
+          return firstName;
+        }
+      } else {
+        if (firstName.length() > 0 && lastName.length() == 0) {
+          return firstName.charAt(0) + " " + lastName;
+        } else if (firstName.length() == 0 && lastName.length() > 0) {
+          return  firstName + " " + lastName.charAt(0);
+        } else {
+          return firstName + " " + lastName;
+        }
+      }
+    } else {
+      return  "";
+    }
+  }
 }

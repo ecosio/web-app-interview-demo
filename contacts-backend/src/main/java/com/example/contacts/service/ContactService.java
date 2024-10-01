@@ -7,7 +7,8 @@ import java.time.Month;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
-
+import java.util.UUID;
+import org.apache.commons.lang3.StringUtils;
 import org.springframework.stereotype.Service;
 
 @Service
@@ -23,6 +24,22 @@ public class ContactService {
     return repository.findById(id);
   }
 
+  public Contact createNew(Contact contact) {
+    // assign id
+    if (StringUtils.isEmpty(contact.getId())) {
+      contact.setId(UUID.randomUUID().toString());
+    }
+
+    return repository.insert(contact);
+  }
+
+  public Contact update(Contact contact) {
+    return repository.save(contact);
+  }
+
+  public void delete(String contactId) {
+    repository.deleteById(contactId);
+  }
 
   public void resetData() {
     repository.deleteAllById(List.of("contact-1", "contact-2", "contact-3", "contact-john"));
