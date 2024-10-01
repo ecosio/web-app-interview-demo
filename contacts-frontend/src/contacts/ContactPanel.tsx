@@ -101,10 +101,11 @@ export default function ContactPanel(): JSX.Element {
           variant="success"
           style={{ marginBottom: "20px" }}
           onClick={() => setAddNew(true)}
+          data-testid="AddContactButton"
         >
           Add Contact
         </Button>
-        <Table striped bordered hover>
+        <Table striped bordered hover data-testid="ContactsTable">
           <thead>
             <tr>
               <th>First Name</th>
@@ -119,13 +120,47 @@ export default function ContactPanel(): JSX.Element {
           <tbody>
             {contacts.map((contact) => {
               return (
-                <tr key={contact.id}>
-                  <td>{contact.firstName}</td>
-                  <td>{contact.lastName}</td>
-                  <td>{contact.email}</td>
-                  <td>{contact.birthday}</td>
-                  <td>{contact.title}</td>
-                  <td>{contact.company}</td>
+                <tr
+                  key={contact.id}
+                  data-testid="ContactsTableRow"
+                  data-testid-value={contact.id}
+                >
+                  <td
+                    data-testid="ContactsTableColumnFirstName"
+                    data-testid-value={contact.id}
+                  >
+                    {contact.firstName}
+                  </td>
+                  <td
+                    data-testid="ContactsTableColumnLastName"
+                    data-testid-value={contact.id}
+                  >
+                    {contact.lastName}
+                  </td>
+                  <td
+                    data-testid="ContactsTableColumnEMail"
+                    data-testid-value={contact.id}
+                  >
+                    {contact.email}
+                  </td>
+                  <td
+                    data-testid="ContactsTableColumnBirthday"
+                    data-testid-value={contact.id}
+                  >
+                    {contact.birthday}
+                  </td>
+                  <td
+                    data-testid="ContactsTableColumnTitle"
+                    data-testid-value={contact.id}
+                  >
+                    {contact.title}
+                  </td>
+                  <td
+                    data-testid="ContactsTableColumnCompany"
+                    data-testid-value={contact.id}
+                  >
+                    {contact.company}
+                  </td>
                   <td>
                     <Button
                       variant="primary"
@@ -133,12 +168,16 @@ export default function ContactPanel(): JSX.Element {
                       onClick={() => {
                         setEditContact(contact);
                       }}
+                      data-testid="EditContactButton"
+                      data-testid-value={contact.id}
                     >
                       Edit Contact
                     </Button>
                     <Button
                       variant="danger"
                       onClick={() => contact.id && onDelete(contact.id)}
+                      data-testid="DeleteContactButton"
+                      data-testid-value={contact.id}
                     >
                       Delete Contact
                     </Button>

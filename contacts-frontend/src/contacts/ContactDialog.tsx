@@ -33,7 +33,7 @@ export default function ContactDialog({
   });
 
   return (
-    <Modal show={true} onHide={onCancel}>
+    <Modal show={true} onHide={onCancel} data-testid="ContactModal">
       <Modal.Header closeButton>
         <Modal.Title>Add/Edit Contact</Modal.Title>
       </Modal.Header>
@@ -60,7 +60,7 @@ export default function ContactDialog({
             isValid,
             errors,
           }) => (
-            <Form noValidate onSubmit={handleSubmit}>
+            <Form noValidate onSubmit={handleSubmit} data-testid="ContactForm">
               <Row className="mb-3">
                 <Form.Group as={Col} md="4" controlId="firstName">
                   <Form.Label>First name</Form.Label>
@@ -70,6 +70,7 @@ export default function ContactDialog({
                     value={values.firstName}
                     onChange={handleChange}
                     isValid={touched.firstName && !errors.firstName}
+                    data-testid="ContactFormFirstName"
                   />
                   <Form.Control.Feedback type="invalid">
                     {errors.firstName}
@@ -83,6 +84,7 @@ export default function ContactDialog({
                     value={values.lastName}
                     onChange={handleChange}
                     isValid={touched.lastName && !errors.lastName}
+                    data-testid="ContactFormLastName"
                   />
                   <Form.Control.Feedback type="invalid">
                     {errors.lastName}
@@ -98,6 +100,7 @@ export default function ContactDialog({
                     value={values.email}
                     onChange={handleChange}
                     isInvalid={!!errors.email}
+                    data-testid="ContactFormEmail"
                   />
                   <Form.Control.Feedback type="invalid">
                     {errors.email}
@@ -111,6 +114,7 @@ export default function ContactDialog({
                     value={values.birthday}
                     onChange={handleChange}
                     isInvalid={!!errors.birthday}
+                    data-testid="ContactFormBirthday"
                   />
                   <Form.Control.Feedback type="invalid">
                     {errors.birthday}
@@ -126,6 +130,7 @@ export default function ContactDialog({
                     value={values.title}
                     onChange={handleChange}
                     isInvalid={!!errors.title}
+                    data-testid="ContactFormTitle"
                   />
                   <Form.Control.Feedback type="invalid">
                     {errors.title}
@@ -139,6 +144,7 @@ export default function ContactDialog({
                     value={values.company}
                     onChange={handleChange}
                     isInvalid={!!errors.company}
+                    data-testid="ContactFormCompany"
                   />
                   <Form.Control.Feedback type="invalid">
                     {errors.company}
@@ -157,6 +163,7 @@ export default function ContactDialog({
                     company: values.company,
                   });
                 }}
+                data-testid="ContactFormSaveButton"
               >
                 Save
               </Button>
